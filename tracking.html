@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBR_TRACK // INITIAL_LOCK</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-base: #080808;
+            --bg-panel: #121212;
+            --bg-terminal: #000000;
+            --bg-progress: #222222;
+            --accent-neon: #ccff00;
+            --text-main: #ffffff;
+            --text-muted: #a3a3a3;
+            --text-data: #878787;
+            --text-dark: #000000;
+            --border-subtle: #222222;
+            --border-accent-dark: #333333;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: 'Space Mono', monospace;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .text-muted {
+            --bs-text-opacity: 1;
+            color: #6c757d !important;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 0;
+            letter-spacing: 1px;
+        }
+
+        .panel {
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border-subtle);
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .text-neon { color: var(--accent-neon) !important; }
+        .bg-neon { background-color: var(--accent-neon) !important; color: #000 !important; }
+
+        .btn-cyber {
+            background-color: var(--accent-neon);
+            color: var(--text-dark);
+            border: none;
+            border-radius: 0;
+            font-weight: 700;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-cyber:hover { background-color: #ffffff; color: var(--text-dark); }
+
+        .sys-label {
+            font-size: 0.7rem;
+            color: var(--accent-neon);
+            margin-bottom: 0.2rem;
+            display: block;
+        }
+
+        .terminal {
+            background-color: var(--bg-terminal);
+            border: 1px solid var(--border-subtle);
+            padding: 1rem;
+            height: 180px;
+            overflow-y: hidden;
+        }
+
+        .progress {
+            height: 8px;
+            background-color: var(--bg-progress);
+            border-radius: 0;
+            margin-top: 5px;
+        }
+        .progress-bar { background-color: var(--accent-neon); }
+
+        .crosshair::before {
+            content: '+';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            color: var(--text-muted);
+        }
+
+        .tracking-data {
+            color: var(--text-data);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="container-fluid py-3 mb-4">
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <span class="bg-neon px-2 py-1 fw-bold" style="color: var(--text-dark);">SIG_TRACK</span>
+                <span class="text-muted ms-2">// NODE_TRIANGULATION</span>
+            </div>
+            <div class="col-md-6 text-center text-muted">SIGNAL STRENGTH: OPTIMAL</div>
+            <div class="col-md-3 text-end text-neon" id="clock">SYS_TIME: --:--:-- UTC</div>
+        </div>
+    </header>
+
+    <div class="container pb-5">
+        <div class="row mb-4">
+            <div class="col-12 d-flex justify-content-between align-items-end pb-3">
+                <div>
+                    <span class="sys-label">> INITIALIZING LOCK // 02</span>
+                    <h1 style="font-size: 3.5rem;">SIGNAL ACQUISITION</h1>
+                    <p class="text-muted mb-0">TRIANGULATING SUBJECT THROUGH NEURAL INTERFACE UPLINK.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <div class="panel h-100 crosshair">
+                    <span class="sys-label mb-3">GEOSPATIAL_INTERCEPT</span>
+                    <div class="w-100 mb-4 d-flex align-items-center justify-content-center" style="height: 350px; background: radial-gradient(circle, #111 0%, var(--bg-terminal) 70%); border: 1px solid var(--border-accent-dark); position: relative; overflow: hidden;">
+                        <div style="width: 200px; height: 200px; border: 1px solid #ccff0033; border-radius: 50%; position: absolute;"></div>
+                        <div style="width: 100px; height: 100px; border: 1px solid #ccff0066; border-radius: 50%; position: absolute;"></div>
+                        <div class="text-neon" style="position: absolute; top: 40%; left: 60%; animation: pulse 2s infinite;">[TARGET]</div>
+                        <div style="width: 100%; height: 1px; background: #222; position: absolute;"></div>
+                        <div style="width: 1px; height: 100%; background: #222; position: absolute;"></div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <span class="sys-label d-flex justify-content-between">
+                            <span>LOCK_STABILITY</span>
+                            <span class="text-neon">92.4%</span>
+                        </span>
+                        <div class="progress"><div class="progress-bar w-75"></div></div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-cyber">ENGAGE SATELLITE OVERRIDE</button>
+                        <a href="index.html" class="btn btn-outline-dark text-muted border-secondary text-decoration-none text-center">RETURN TO PROFILE</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="panel">
+                            <span class="sys-label mb-3">// ACTIVE COORDINATES</span>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <span class="text-muted d-block">LATITUDE</span>
+                                    <span class="tracking-data fs-5">35.6895 N</span>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="text-muted d-block">LONGITUDE</span>
+                                    <span class="tracking-data fs-5">139.6917 E</span>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="text-muted d-block">ALTITUDE</span>
+                                    <span class="tracking-data fs-5">14.2M AMSL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="panel h-100">
+                            <span class="sys-label mb-3">// SENSOR ARRAY</span>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">UPLINK_ID:</span>
+                                <span class="tracking-data">SAT_COMM_V4</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">PING_LATENCY:</span>
+                                <span class="tracking-data">14MS</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted">JITTER:</span>
+                                <span class="tracking-data">LOW</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="panel h-100 p-0 border-neon">
+                            <div class="bg-neon px-2 py-1 text-dark fw-bold" style="font-size: 0.7rem;">
+                                > SIGNAL_LOG
+                            </div>
+                            <div class="terminal" id="tracking-log"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="panel">
+                            <span class="sys-label mb-3">// TRACKING PARAMETERS</span>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-2"><span class="text-muted">REFRESH RATE:</span> <span class="tracking-data">0.2s</span></div>
+                                    <div class="mb-2"><span class="text-muted">ENCRYPTION:</span> <span class="tracking-data">AES-2048-BIT</span></div>
+                                </div>
+                                <div class="col-md-6 text-end">
+                                    <span class="text-muted d-block">STATUS: <span class="text-neon">ACTIVE_LOCK</span></span>
+                                    <span class="text-muted d-block">OPERATOR: <span class="text-white">SYS_ADMIN</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateClock() {
+            document.getElementById('clock').innerHTML = `SYS_TIME: ${new Date().toISOString().substring(11, 19)} UTC`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        const logText = [
+            "Pinging satellite array...",
+            "Handshake verified.",
+            "Intercepting sub-dermal tracker 01...",
+            "Signal bounce: Sector 4 > Sector 9.",
+            "Syncing neural port timestamp...",
+            "Packet capture: [████████] 100%",
+            "Triangulation complete.",
+            "Monitoring movement stream_"
+        ];
+        let logIdx = 0;
+        const logEl = document.getElementById('tracking-log');
+        function printLog() {
+            if (logIdx < logText.length) {
+                const p = document.createElement('p');
+                p.style.margin = "0";
+                p.style.color = "var(--text-muted)";
+                p.innerText = "> " + logText[logIdx++];
+                logEl.appendChild(p);
+                setTimeout(printLog, 800);
+            }
+        }
+        setTimeout(printLog, 500);
+    </script>
+    <style>@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }</style>
+</body>
+</html>
